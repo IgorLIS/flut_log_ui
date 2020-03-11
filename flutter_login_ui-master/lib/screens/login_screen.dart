@@ -281,7 +281,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        'Авторизация',
+                        'Авторизация!',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
