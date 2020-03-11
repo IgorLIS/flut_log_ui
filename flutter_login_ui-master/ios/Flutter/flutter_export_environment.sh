@@ -1,8 +1,8 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/Users/igor_lapshin/Downloads/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/igor_lapshin/prog_dart/flutter_login_ui-master"
-export "FLUTTER_TARGET=/Users/igor_lapshin/prog_dart/flutter_login_ui-master/lib/main.dart"
+export "FLUTTER_APPLICATION_PATH=/Users/igor_lapshin/github/flutter_login_ui-master"
+export "FLUTTER_TARGET=/Users/igor_lapshin/github/flutter_login_ui-master/lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "SYMROOT=${SOURCE_ROOT}/../build/ios"
 export "FLUTTER_FRAMEWORK_DIR=/Users/igor_lapshin/Downloads/flutter/bin/cache/artifacts/engine/ios"

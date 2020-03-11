@@ -136,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         color: Colors.white,
         child: Text(
-          'LOGIN',
+          'ВОЙТИ',
           style: TextStyle(
             color: Color(0xFF527DAA),
             letterSpacing: 1.5,
@@ -281,7 +281,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        'Войти',
+                        'Авторизация',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
