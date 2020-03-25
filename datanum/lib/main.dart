@@ -8,7 +8,11 @@ class MyWig extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Ferst wig',
-      theme: ThemeData(primarySwatch: Colors.green),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blue,
+        accentColor: Colors.white,
+        fontFamily: 'Georgia',),
       home: OneHomePage(),
     );
   }
@@ -21,7 +25,7 @@ class OneHomePage extends StatelessWidget {
       appBar: AppBar(
         leading: Icon(
           Icons.undo,
-          color: Colors.black,
+          color: Colors.white,
         ),
         title: Center(
           child: Text(
@@ -39,6 +43,8 @@ class OneHomePage extends StatelessWidget {
           )
         ],
       ),
+
+
       body: Center(
         child: Container(
           height: 350,
@@ -48,11 +54,11 @@ class OneHomePage extends StatelessWidget {
     boxShadow: [
       BoxShadow(
         color: Colors.blueGrey,
-        blurRadius: 20.0, // has the effect of softening the shadow
-        spreadRadius: 5.0, // has the effect of extending the shadow
+        blurRadius: 90.0, // has the effect of softening the shadow
+        spreadRadius: 1.0, // has the effect of extending the shadow
         offset: Offset(
-          10.0, // horizontal, move right 10
-          10.0, // vertical, move down 10
+          5.0, // horizontal, move right 10
+          5.0, // vertical, move down 10
         ),
       )
     ],
@@ -66,7 +72,7 @@ class OneHomePage extends StatelessWidget {
                 'Авторизация',
                 style: TextStyle(
                   fontSize: 40,
-                  color: Colors.blue,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -74,6 +80,7 @@ class OneHomePage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: TextField(
+                  cursorColor: Colors.white,
                   obscureText: false,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -96,10 +103,11 @@ class OneHomePage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: FlatButton(
-                  color: Colors.blue,
+                  
+                  color: Colors.grey,
                   textColor: Colors.white,
                   padding: EdgeInsets.all(8.0),
-                  splashColor: Colors.blueAccent,
+                  splashColor: Colors.white,
                   onPressed: () {},
                   child: Text(
                     'Войти',
