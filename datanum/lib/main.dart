@@ -12,7 +12,8 @@ class MyWig extends StatelessWidget {
         brightness: Brightness.dark,
         primarySwatch: Colors.blue,
         accentColor: Colors.white,
-        fontFamily: 'Georgia',),
+        fontFamily: 'Georgia',
+      ),
       home: OneHomePage(),
     );
   }
@@ -43,90 +44,90 @@ class OneHomePage extends StatelessWidget {
           )
         ],
       ),
-
-
       body: Center(
         child: Container(
           height: 350,
           width: 350,
-          
-          decoration: new BoxDecoration(
-    boxShadow: [
-      BoxShadow(
-        color: Colors.blueGrey,
-        blurRadius: 90.0, // has the effect of softening the shadow
-        spreadRadius: 1.0, // has the effect of extending the shadow
-        offset: Offset(
-          5.0, // horizontal, move right 10
-          5.0, // vertical, move down 10
-        ),
-      )
-    ],
-    
-  ),
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              child: Text(
-                'Авторизация',
-                style: TextStyle(
-                  fontSize: 40,
-                  color: Colors.white,
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.blueGrey,
+                blurRadius: 90.0, // has the effect of softening the shadow
+                spreadRadius: 1.0, // has the effect of extending the shadow
+                offset: Offset(
+                  5.0, // horizontal, move right 10
+                  5.0, // vertical, move down 10
                 ),
-              ),
-            ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: TextField(
-                  cursorColor: Colors.white,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Email',
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: 'Password'),
-                ),
-              ),
-            ),
-            Container(
-              color: Colors.grey,
-              child: Center(
-                child: Row(
-                children: <Widget>[
-                  Container(
-                    
-                child: FlatButton(
-                  textColor: Colors.white,
-                  padding: EdgeInsets.all(8.0),
-                  splashColor: Colors.white,
-                  onPressed: () {},
-                  child: Text(
-                    'Войти',
-                    style: TextStyle(fontSize: 30.0),
-                  ),
-                ),
-              ),
-              Container(child: Icon(Icons.add),)
-                ],
-              ),
               )
-              
-              
-            )
-            
-          ],
-        ),),
+            ],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                child: Text(
+                  'Авторизация',
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: TextField(
+                    cursorColor: Colors.white,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Email',
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(), labelText: 'Password'),
+                  ),
+                ),
+              ),
+              Container(
+                
+                  color: Colors.grey,
+                  child: Center(
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          child: FlatButton(
+                            textColor: Colors.white,
+                            padding: EdgeInsets.all(8.0),
+                            splashColor: Colors.white,
+                            onPressed: () {},
+                            child: Text(
+                              'Войти',
+                              style: TextStyle(fontSize: 30.0),
+                            ),
+                          ),
+                          
+                        ),
+                        SizedBox(height: 50,),
+                        Container(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(child: Icon(Icons.message, color: Colors.pink,)),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),),
+            ],
+          ),
+        ),
       ),
     );
   }
