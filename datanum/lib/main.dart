@@ -100,11 +100,13 @@ class OneHomePage extends StatelessWidget {
               ),
             ),
             Container(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
+              color: Colors.grey,
+              child: Center(
+                child: Row(
+                children: <Widget>[
+                  Container(
+                    
                 child: FlatButton(
-                  
-                  color: Colors.grey,
                   textColor: Colors.white,
                   padding: EdgeInsets.all(8.0),
                   splashColor: Colors.white,
@@ -115,7 +117,14 @@ class OneHomePage extends StatelessWidget {
                   ),
                 ),
               ),
+              Container(child: Icon(Icons.add),)
+                ],
+              ),
+              )
+              
+              
             )
+            
           ],
         ),),
       ),
