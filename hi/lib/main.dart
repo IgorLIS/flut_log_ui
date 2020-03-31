@@ -1,141 +1,81 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
+class MyCalulateArea extends StatefulWidget {
   @override
+  State<StatefulWidget> createState() => MyCalulateAreaState();
+}
+
+class MyCalulateAreaState extends State<MyCalulateArea> {
+  final _formKey = GlobalKey<FormState>();
+  int _width;
+  int _height;
+  int _area;
+
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'fist programm',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        
-        primaryColor: Colors.pink[100],
-      ),
-      home: OnePage(),
-    );
+    return new Form(
+        key: _formKey,
+        child: new Column(children: [
+          new Row(children: <Widget>[
+            new Container(
+                padding: EdgeInsets.all(10.0), child: new Text('Ширина (мм):')),
+            new Expanded(
+                child: Container(
+                    padding: EdgeInsets.all(10.0),
+                    child: new TextFormField(validator: (value) {
+                      if (value.isEmpty) return 'Задайте Ширину';
+
+                      try {
+                        _width = int.parse(value);
+                      } catch (e) {
+                        _width = null;
+                        return e.toString();
+                      }
+                    }))),
+          ]),
+          new SizedBox(height: 10.0),
+          new Row(children: <Widget>[
+            new Container(
+                padding: EdgeInsets.all(10.0), child: new Text('Высота (мм):')),
+            new Expanded(
+                child: Container(
+                    padding: EdgeInsets.all(10.0),
+                    child: new TextFormField(validator: (value) {
+                      if (value.isEmpty) return 'Задайте Высоту';
+
+                      try {
+                        _height = int.parse(value);
+                      } catch (e) {
+                        _height = null;
+                        return e.toString();
+                      }
+                    }))),
+          ]),
+          new SizedBox(height: 10.0),
+          new RaisedButton(
+            onPressed: () {
+              if (_formKey.currentState.validate()) {
+                setState(() {
+                  if (_width is int && _height is int) _area = _width * _height;
+                });
+              }
+            },
+            child: Text('Вычислить'),
+            color: Colors.blue,
+            textColor: Colors.white,
+          ),
+          new SizedBox(height: 50.0),
+          new Text(
+            _area == null
+                ? 'задайте параметры'
+                : 'S = $_width * $_height = ${_area} (мм2)',
+            style: TextStyle(fontSize: 30.0),
+          )
+        ]));
   }
 }
 
-class OnePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.menu),
-        title: Text('Приложение для тестов'),
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(
-                Icons.mic,
-                color: Colors.pink,
-              ),
-              onPressed: null),
-          IconButton(
-              icon: Icon(
-                Icons.settings,
-                color: Colors.pink,
-              ),
-              onPressed: null),
-        ],
-      ),
-      body: Column(
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.all(25.0),
-            color: Colors.pink[50],
-            child: Center(
-              child: Container(
-                width: 400,
-                height: 550,
-                color: Colors.pink[300],
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Container(
-                        width: 200,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.teal,
-                          border: Border.all(width:2.0),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Кубик первый',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                            ),
-                          ),
-                        )),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    ClipRRect(
-                      child: Container(
-                        width: 200,
-                        height: 100,
-                        color: Colors.yellow[200],
-                        child: Center(
-                          child: Text(
-                            'Кубик второй',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 30, fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Text(
-                      '5',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 90,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                // decoration: BoxDecoration(
-                //   border: Border.all(
-                //     color: Colors.teal,
-                //     width: 10,
-                //   ),
-                //   // borderRadius:BorderRadius.circular(12),
-                // ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          ClipRRect(
-            child: Container(
-              width: 400,
-              height: 100,
-              color: Colors.red,
-              child: FlatButton(
-                onPressed: null,
-                child: Text(
-                  'КИДАЙ',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                  ),
-                ),
-              ),
-            ),
-            borderRadius: BorderRadius.circular(60),
-          ),
-        ],
-      ),
-    );
-  }
-}
+void main() => runApp(new MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: new Scaffold(
+        appBar: new AppBar(title: new Text('Калькулятор площади')),
+        body: new MyCalulateArea())));
