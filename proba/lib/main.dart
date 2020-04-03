@@ -1,6 +1,12 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
+
+
+  
+  
 
 class MyApp extends StatelessWidget {
   @override
@@ -26,13 +32,21 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  String _one;
+
+  // int _counter = 0;
+  int _num;
+  int _one=12;
 
   void _incrementCounter() {
     setState(() {
+      Random _ramnum = new Random();
+      _num = _ramnum.nextInt(7); 
+       if (_num == 0){
+         _num++;
+       }
+      _one++;
+      // print (_num); 
       // _counter++;
-      var one = _one;
     });
   }
 
@@ -40,31 +54,64 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-      ),
+        title: Text(widget.title, style: TextStyle(color:Colors.pink),),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment(0.8, 0.0),
+                  colors: <Color>[Colors.white, Colors.blue[300]],
+                  ),
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                      color: Colors.blueGrey[900],
+                      offset: Offset(10.0, 2.0),
+                      blurRadius: 30,
+                    ),
+                  ],
+
+                  ),
+        ),
+        ),
+      
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'ВАШЕ ЧИСЛО' ,
+              style: TextStyle(color: Colors.grey, fontSize: 40,),
             ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
+              '$_one',
+              style: TextStyle(color: Colors.grey, fontSize: 70,),
             ),
             Text(
-              '$one',
+              '$_num',
+               style: TextStyle(color: Colors.grey, fontSize: 70,),
             ),
             SizedBox(
               height: 15,
             ),
             Container(
+              height: 150,
+              width: 400,
               padding: EdgeInsets.all(40),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment(0.8, 0.0),
+                  colors: [
+                    const Color(0xFF00E5FF),
+                    const Color(0xFF00B0Ff),
+                  ],
+                  tileMode: TileMode.mirror,
+                ),
+              ),
               child: TextField(
                 obscureText: false,
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: Colors.white,
                   fontFamily: 'OpenSans',
                   fontSize: 20,
                 ),
@@ -79,15 +126,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: InputDecoration(labelText: 'Numbers'),
                 maxLength: 10,
                 validator: (String value) {
+                  
                   if (value.isEmpty) {
                     return 'Name is Required';
                   }
-
-                  return null;
+                   return null;
                 },
-                onSaved: (String value) {
-                  _one = value;
-                  print(_one) ;
+                onSaved: (var value) {
+                  _one = value as int;
                 },
               ),
             ),
@@ -97,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: Icon(Icons.golf_course),
       ),
     );
   }
