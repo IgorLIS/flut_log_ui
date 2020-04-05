@@ -1,4 +1,4 @@
-package com.example.proba
+package com.example.hi2
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
