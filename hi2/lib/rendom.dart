@@ -51,8 +51,30 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         
-        title: Text(widget.title),
+        title: Center(child: Text(widget.title, style: TextStyle(color:Colors.blue),),) ,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[
+                Colors.cyan[50],
+                Colors.blue[100],
+                Colors.pink[200],
+              ],
+            ),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: Colors.blueGrey[200],
+                offset:Offset(1.0,6.0),
+                blurRadius:30,
+              )
+            ]
+        ),
       ),
+
+      ),
+
       body: Center(
         
         child: Column(
