@@ -13,15 +13,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  TextEditingController _controller = TextEditingController();
-  TextEditingController _controller2 = TextEditingController();
-  String text2;
-  String text3;
+  
+  
   
   int _counter;
   int _counter1;
-  int _counter3;
-
+  
   void _incrementCounter() {
     setState(() {
       var randomize = Random();
@@ -37,11 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
       if (_counter1==0){
         _counter1++;
       }
-      // _counter=_counter==0??_counter++;
-      _counter3 =_counter1*_counter;
+      
 
-      text3 = _controller2.text;
-      text2 = _controller.text;
+      
     });
   }
 
@@ -82,55 +77,19 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'ДВА КУБИКА',
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.display1, 
             ),
             Text(
               '$_counter1',
               style: Theme.of(context).textTheme.display1,
             ),
-            Text(
-              '$_counter3',
-              style: Theme.of(context).textTheme.display1,
-            ),
-            Text(
-              '$text2',
-              style: TextStyle(color: Colors.cyan[300], fontSize: 50,),
-            ),
-            Text(
-              '$text3',
-              style: TextStyle(color: Colors.cyan[300], fontSize: 50,),
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 40, right: 40),
-              child: TextField(
-                controller: _controller,
-                style: TextStyle(fontSize: 20, color: Colors.blue),
-                decoration: InputDecoration(
-                  hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
-                  prefixIcon: Icon(Icons.keyboard, color:Colors.blue, )
-                ),
+            
 
-                
-              ),
-            ),
-            Container(
-
-              padding: EdgeInsets.only(left: 40, right: 40),
-              child: TextField(
-                controller: _controller2,
-                style: TextStyle(fontSize: 20, color: Colors.blue),
-                decoration: InputDecoration(
-                  hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
-                  prefixIcon: Icon(Icons.input),
-                ),
-
-                
-              ),
-            ),
+            
           ],
         ),
       ),
