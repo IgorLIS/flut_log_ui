@@ -25,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
       
       // _counter++;
 
-      _counter = randomize.nextInt(9);
+      _counter = randomize.nextInt(7);
       // _counter1 = randomize.nextInt(9);
 
       if (_counter==0){
@@ -81,20 +81,19 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'ОДИН КУБИК',
+              'ОДИН КУБИК', style: TextStyle(fontSize: 50,),
             ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1, 
+              '$_counter', style: TextStyle(fontSize: 160,), 
             ),
             // Text(
             //   '$_counter1',
             //   style: Theme.of(context).textTheme.display1,
             // ),
            
-          RaisedButton(onPressed: (){
-        Navigator.pop(context);
-      }, child: Text('Назад')),
+      //     RaisedButton(onPressed: (){
+      //   Navigator.pop(context);
+      // }, child: Text('Назад')),
             
           ]
         ),
