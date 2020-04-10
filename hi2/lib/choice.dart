@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hi2/homepages.dart';
 import 'package:hi2/homepages2.dart';
 
+
+
 class Choice extends StatefulWidget {
   @override
   _ChoiceState createState() => _ChoiceState();
@@ -19,7 +21,10 @@ class _ChoiceState extends State<Choice> {
 
   void _choiceTwo() {
     setState(() {
-      MyHomePage2();
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => MyHomePage2()),
+      );
     });
   }
 

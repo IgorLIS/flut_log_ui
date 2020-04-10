@@ -17,7 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
   
   
   int _counter;
-  int _counter1;
+  // int _counter1;
   
   void _incrementCounter() {
     setState(() {
@@ -26,14 +26,14 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter++;
 
       _counter = randomize.nextInt(9);
-      _counter1 = randomize.nextInt(9);
+      // _counter1 = randomize.nextInt(9);
 
       if (_counter==0){
         _counter++;
       }
-      if (_counter1==0){
-        _counter1++;
-      }
+      // if (_counter1==0){
+      //   _counter1++;
+      // }
       
 
       
@@ -83,10 +83,10 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1, 
             ),
-            Text(
-              '$_counter1',
-              style: Theme.of(context).textTheme.display1,
-            ),
+            // Text(
+            //   '$_counter1',
+            //   style: Theme.of(context).textTheme.display1,
+            // ),
             
 
             
