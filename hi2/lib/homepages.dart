@@ -16,7 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
   
   
   
-  int _counter;
+  int _counter=0;
   // int _counter1;
   
   void _incrementCounter() {
@@ -46,27 +46,31 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         
-        title: Center(child: Text(widget.title, style: TextStyle(color:Colors.blue),),) ,
+        title: Center(
+          child: Text(
+            'Игральные камни',
+            style: TextStyle(color: Colors.blue),
+          ),
+        ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: <Color>[
-                Colors.cyan[50],
-                Colors.blue[100],
-                Colors.pink[200],
-              ],
-            ),
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                color: Colors.blueGrey[200],
-                offset:Offset(1.0,6.0),
-                blurRadius:30,
-              )
-            ]
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: <Color>[
+                  Colors.cyan[50],
+                  Colors.blue[100],
+                  Colors.pink[200],
+                ],
+              ),
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.blueGrey[200],
+                  offset: Offset(1.0, 6.0),
+                  blurRadius: 30,
+                )
+              ]),
         ),
-      ),
 
       ),
 
@@ -77,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'ДВА КУБИКА',
+              'ОДИН КУБИК',
             ),
             Text(
               '$_counter',
@@ -87,11 +91,15 @@ class _MyHomePageState extends State<MyHomePage> {
             //   '$_counter1',
             //   style: Theme.of(context).textTheme.display1,
             // ),
+           
+          RaisedButton(onPressed: (){
+        Navigator.pop(context);
+      }, child: Text('Назад')),
             
-
-            
-          ],
+          ]
         ),
+      
+      
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hi2/choice.dart';
-// import 'package:hi2/homepages.dart';
-// import 'package:hi2/homepages2.dart';
+import 'package:hi2/homepages.dart';
+import 'package:hi2/homepages2.dart';
 
 
 
