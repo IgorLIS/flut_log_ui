@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
-  
-
   final String title;
 
   @override
@@ -13,39 +11,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
-  
-  
-  int _counter=0;
+  int _counter = 1;
   // int _counter1;
-  
+
   void _incrementCounter() {
     setState(() {
       var randomize = Random();
-      
+
       // _counter++;
 
       _counter = randomize.nextInt(7);
       // _counter1 = randomize.nextInt(9);
 
-      if (_counter==0){
+      if (_counter == 0) {
         _counter++;
       }
       // if (_counter1==0){
       //   _counter1++;
       // }
-      
-
-      
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
-        
         title: Center(
           child: Text(
             'Игральные камни',
@@ -71,40 +61,47 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
               ]),
         ),
-
       ),
 
       body: Center(
-        
         child: Column(
-          
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'ОДИН КУБИК', style: TextStyle(fontSize: 50,),
-            ),
-            Text(
-              '$_counter', style: TextStyle(fontSize: 160,), 
-            ),
-            // Text(
-            //   '$_counter1',
-            //   style: Theme.of(context).textTheme.display1,
-            // ),
-           
-      //     RaisedButton(onPressed: (){
-      //   Navigator.pop(context);
-      // }, child: Text('Назад')),
-            
-          ]
-        ),
-      
-      
+
+            // mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              // Text(
+              //   'ОДИН КУБИК', style: TextStyle(fontSize: 50,),
+              // ),
+              // Text(
+              //   '$_counter', style: TextStyle(fontSize: 20,),
+              // ),
+
+              Center(
+                child: Container(
+                  child: FlatButton(
+                    onPressed: _incrementCounter,
+                    child: Image.asset(
+                      'images/dice$_counter.png',
+                      color: Colors.blueGrey,
+                      height: 300,
+                      width: 300,
+                    ),
+                  ),
+                ),
+              ),
+
+              // FlatButton(onPressed: _incrementCounter, child: Text('Кинуть'))
+              
+            ],),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.stars),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+
+      
+
+
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: _incrementCounter,
+      //   tooltip: 'Increment',
+      //   child: Icon(Icons.stars),
+      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

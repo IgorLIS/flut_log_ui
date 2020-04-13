@@ -62,11 +62,11 @@ class _ChoiceState extends State<Choice> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
-            child: FlatButton(
-              onPressed: _choiceOne,
-              child: Text(
-                'Один камень',
-                style: TextStyle(color: Colors.grey, fontSize: 50),
+            child: Center(
+              child: FlatButton(
+                onPressed: _choiceOne,
+                child: Image.asset('images/dice4.png',
+                    color: Colors.blueGrey,),
               ),
             ),
           ),
@@ -75,21 +75,26 @@ class _ChoiceState extends State<Choice> {
           ),
           Container(
             child: Text(
-              'или',
-              style: TextStyle(color: Colors.grey, fontSize: 40),
+              '___или___',
+              style: TextStyle(color: Colors.grey, fontSize: 40,),
             ),
           ),
           SizedBox(
             height: 90,
           ),
           Container(
-            child: FlatButton(
+            child: Center (child: FlatButton(
               onPressed: _choiceTwo,
-              child: Text(
-                'Два камня',
-                style: TextStyle(color: Colors.grey, fontSize: 50),
-              ),
-            ),
+              child: Row(
+                children: <Widget>[
+                  Image.asset('images/dice3.png',
+                    color: Colors.blueGrey,),
+                  SizedBox(width: 60,),
+                  Image.asset('images/dice5.png',
+                    color: Colors.blueGrey,),
+                ]
+              ,)
+            ),),
           ),
         ],
       ),
