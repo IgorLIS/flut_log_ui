@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
 
-            // mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               // Text(
               //   'ОДИН КУБИК', style: TextStyle(fontSize: 50,),
@@ -82,8 +82,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Image.asset(
                       'images/dice$_counter.png',
                       color: Colors.blueGrey,
-                      height: 300,
-                      width: 300,
+                      height: 150,
+                      width: 150,
+                      fit:BoxFit.fill,
                     ),
                   ),
                 ),

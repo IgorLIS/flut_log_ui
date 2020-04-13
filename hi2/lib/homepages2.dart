@@ -80,38 +80,31 @@ class _MyHomePage2State extends State<MyHomePage2> {
           
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Text(
-            //   'ДВА КУБИКА',
-            //   style: TextStyle(fontSize: 50,),
-            // ),
-            // Text(
-            //   '$_counter',
-            //   style: TextStyle(fontSize: 160,), 
-            // ),
-            // Text(
-            //   '$_counter1',
-            //   style: TextStyle(fontSize: 160,),
-            // ),
+            
             Container(
                 child: FlatButton(
                   onPressed: _incrementCounter,
                   child: Image.asset(
                     'images/dice$_counter.png',
                     color: Colors.blueGrey,
-                    height: 200,
-                    width: 200,
+                    height: 150,
+                    width: 150,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
+
+              SizedBox(height: 150,),
               Container(
-                height: 200,
-                width: 200,
+                
                 child: FlatButton(
                   onPressed: _incrementCounter,
                   child: Image.asset(
                     'images/dice$_counter1.png',
                     color: Colors.blueGrey,
-                    
+                    height: 150,
+                    width: 150,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),

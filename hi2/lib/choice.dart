@@ -66,7 +66,7 @@ class _ChoiceState extends State<Choice> {
               child: FlatButton(
                 onPressed: _choiceOne,
                 child: Image.asset('images/dice4.png',
-                    color: Colors.blueGrey,),
+                    color: Colors.blueGrey, height: 150,width: 150, fit: BoxFit.fill ,),
               ),
             ),
           ),
@@ -88,10 +88,10 @@ class _ChoiceState extends State<Choice> {
               child: Row(
                 children: <Widget>[
                   Image.asset('images/dice3.png',
-                    color: Colors.blueGrey,),
+                    color: Colors.blueGrey,height: 150,width: 150, fit: BoxFit.fill ,),
                   SizedBox(width: 60,),
                   Image.asset('images/dice5.png',
-                    color: Colors.blueGrey,),
+                    color: Colors.blueGrey, height: 150,width: 150, fit: BoxFit.fill ,),
                 ]
               ,)
             ),),
