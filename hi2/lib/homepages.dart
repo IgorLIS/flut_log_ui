@@ -39,20 +39,21 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Center(
           child: Text(
             'Игральные камни',
-            style: TextStyle(color: Colors.blue),
+            style: TextStyle(color: Colors.white),
           ),
         ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: <Color>[
-                  Colors.cyan[50],
-                  Colors.blue[100],
-                  Colors.pink[200],
-                ],
-              ),
+              // gradient: LinearGradient(
+              //   begin: Alignment.topLeft,
+              //   end: Alignment.bottomRight,
+              //   colors: <Color>[
+              //     Colors.cyan[50],
+              //     Colors.blue[100],
+              //     Colors.pink[200],
+              //   ],
+              // ),
+              color: Colors.blue,
               boxShadow: <BoxShadow>[
                 BoxShadow(
                   color: Colors.blueGrey[200],
@@ -81,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: _incrementCounter,
                     child: Image.asset(
                       'images/dice$_counter.png',
-                      color: Colors.blueGrey,
+                      // color: Colors.blueGrey,
                       height: 150,
                       width: 150,
                       fit:BoxFit.fill,

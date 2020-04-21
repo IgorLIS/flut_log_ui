@@ -40,15 +40,16 @@ class _ChoiceState extends State<Choice> {
         ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: <Color>[
-                  Colors.cyan[50],
-                  Colors.blue[100],
-                  Colors.pink[200],
-                ],
-              ),
+              // gradient: LinearGradient(
+              //   begin: Alignment.topLeft,
+              //   end: Alignment.bottomRight,
+              //   colors: <Color>[
+              //     Colors.cyan[50],
+              //     Colors.blue[100],
+              //     Colors.pink[200],
+              //   ],
+              // ),
+              color: Colors.white,
               boxShadow: <BoxShadow>[
                 BoxShadow(
                   color: Colors.blueGrey[200],
@@ -66,7 +67,8 @@ class _ChoiceState extends State<Choice> {
               child: FlatButton(
                 onPressed: _choiceOne,
                 child: Image.asset('images/dice4.png',
-                    color: Colors.blueGrey, height: 150,width: 150, fit: BoxFit.fill ,),
+                    // color: Colors.blueGrey, 
+                    height: 150,width: 150, fit: BoxFit.fill ,),
               ),
             ),
           ),
@@ -88,10 +90,12 @@ class _ChoiceState extends State<Choice> {
               child: Row(
                 children: <Widget>[
                   Image.asset('images/dice3.png',
-                    color: Colors.blueGrey,height: 150,width: 150, fit: BoxFit.fill ,),
+                    // color: Colors.blueGrey,
+                    height: 150,width: 150, fit: BoxFit.fill ,),
                   SizedBox(width: 60,),
                   Image.asset('images/dice5.png',
-                    color: Colors.blueGrey, height: 150,width: 150, fit: BoxFit.fill ,),
+                    // color: Colors.blueGrey, 
+                    height: 150,width: 150, fit: BoxFit.fill ,),
                 ]
               ,)
             ),),
